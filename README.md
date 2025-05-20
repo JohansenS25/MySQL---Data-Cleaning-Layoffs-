@@ -40,10 +40,4 @@ This project focuses on cleaning a global layoffs dataset using SQL in MySQL Wor
 
 This project demonstrates best practices in data cleaning for analytics and reporting. Clean, structured data ensures more reliable visualizations and data-driven decisions.
 
-## 🚀 Next Steps
-
-- Upload the cleaned data into Power BI or Tableau for visual exploration.
-- Analyze trends by industry, location, or time.
-
 ---
-
