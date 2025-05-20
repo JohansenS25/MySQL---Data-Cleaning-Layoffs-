@@ -1,43 +1,48 @@
 # Layoffs Data Cleaning Project (MySQL)
 
-This project focuses on cleaning a global layoffs dataset using SQL in MySQL Workbench. The dataset includes company, industry, and layoff details from various countries. The goal was to prepare the data for accurate analysis by removing duplicates, standardizing entries, handling null values, and formatting data types.
+**Summary:**  
+This project involved cleaning a real-world dataset of global layoffs using SQL in MySQL Workbench. It showcases essential data wrangling techniques such as deduplication, data standardization, and handling missing values to prepare the dataset for analysis and visualization.
 
-## 🧼 Data Cleaning Steps
+## Objectives
 
-1. **Created a Staging Table**  
-   - Duplicated the raw `layoffs` table into `layoffs_staging` for safe modification.
+- Apply data cleaning best practices using SQL.
+- Prepare a raw dataset for accurate business insights.
+- Demonstrate use of window functions, joins, and data transformations.
 
-2. **Removed Duplicates**  
-   - Used `ROW_NUMBER()` window function to identify and delete exact duplicates based on multiple columns.
+## Data Cleaning Process
 
-3. **Standardized the Data**  
-   - Trimmed white spaces in company and country names.
-   - Standardized industry names (e.g., consolidated "Crypto", removed inconsistencies).
-   - Converted the `date` column from text to proper `DATE` format.
+1. **Created a Staging Table**
+   - Copied the raw dataset into a staging table to preserve the original data.
 
-4. **Handled Null and Blank Values**  
-   - Replaced blank industries with `NULL`.
-   - Filled missing industry values using self-join logic based on company and location.
-   - Removed rows where both `total_laid_off` and `percentage_laid_off` were missing.
+2. **Removed Duplicates**
+   - Used `ROW_NUMBER()` to identify duplicates based on key columns.
+   - Deleted duplicate entries after verification.
 
-5. **Dropped Unnecessary Columns**  
-   - Removed the temporary `row_num` column used for deduplication.
+3. **Standardized Data**
+   - Trimmed whitespace, unified industry categories, and corrected country names.
+   - Converted date values from strings to `DATE` format.
 
-## 💡 Tools & Concepts Used
+4. **Handled Null and Blank Values**
+   - Replaced blanks with `NULL`, then filled in missing values using self-joins.
+   - Removed entries lacking key layoff information.
+
+5. **Dropped Temporary Columns**
+   - Removed helper columns (like `row_num`) after completing deduplication.
+
+## Tools and Techniques Used
 
 - MySQL Workbench
-- Window Functions (`ROW_NUMBER()`)
-- Common Table Expressions (CTEs)
-- Self Joins
-- Data Type Conversion (`STR_TO_DATE`)
-- `TRIM()` and string cleaning functions
+- SQL: CTEs, `ROW_NUMBER()`, `JOIN`, `UPDATE`, `DELETE`, `TRIM`, `STR_TO_DATE()`
+- Data cleaning workflow development
 
-## 📁 File
+## File
 
-- `MySQL - Data Cleaning (Layoffs).sql` — complete SQL script with step-by-step cleaning operations.
+- `MySQL - Data Cleaning (Layoffs).sql`: All SQL queries with in-line documentation.
 
-## 🔍 Purpose
+## Key Skills Demonstrated
 
-This project demonstrates best practices in data cleaning for analytics and reporting. Clean, structured data ensures more reliable visualizations and data-driven decisions.
+- SQL scripting and data cleaning
+- Analytical thinking and attention to detail
+- Data normalization and preparation
+- Real-world problem solving with staging workflows
 
----
